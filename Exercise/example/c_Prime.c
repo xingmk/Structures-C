@@ -3,6 +3,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+#include <stdio.h>
+int main() {
+
+  int x;
+  scanf("%d", &x);
+
+  int i;
+  int isprime = 1; //设置初始素数是1
+  for (i = 2; i < x; i++) {
+
+    if (x % i == 0) {
+
+      isprime = 0;
+    }
+  }
+  if (isprime == 1) {
+
+    printf("is sushu\n");
+  } else {
+    printf("not sushu\n");
+  }
+
+  return 0;
+}
+ * */
+
 int Prime_num(int);
 int main(int argc, char *argv[]) {
   int a;
