@@ -13,7 +13,7 @@
 > **short** < **int** <= **long** <= **longlong**
 
 ## sizeof
-> role: compute memory size
+> role: compute memory size  
 > grammar:`sizeof( datetype / variable )`
 
 ```cpp
@@ -67,7 +67,7 @@ A - 65
 ## 字符串
 > C:  `char variable[] = "value"`
 >
-> C++: `string variable = "value"`
+> C++: `string variable = "value"`  
 > **C++** need to add `#include <string>`
 
 
@@ -175,7 +175,7 @@ c = ( a > b ? a : b );
 
 ## switch
 
-```c
+```cpp
 
 switch ( 整型 或 字符型 ){
 
@@ -313,9 +313,9 @@ int main(){
 ```
 
 ## 指针内存
-**无论指针是什么类型都遵守以下** 
-在32位OS下 --> 4字节
-在64位OS下 --> 8字节
+**无论指针是什么类型都遵守以下**   
+- 在32位OS下 --> 4字节   
+- 在64位OS下 --> 8字节
 
 ## 空指针, 野指针 
 ```cpp
@@ -348,7 +348,7 @@ int main(){
 
 `int * const p = &a; ` 
 
-**即修饰指针又修饰常量** 
+**即修饰指针又修饰常量**   
 `const int * const p = &a;` 
 
 
