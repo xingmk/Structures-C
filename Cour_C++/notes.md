@@ -57,11 +57,11 @@ A - 65
 
 ## 转义字符
 
-| character | meaning     |
-| :---:     | :---:       |
-| \n        | 换行        |
-| \t        | 水平制表    |
-| \\        | 代表一个"\" |
+| character | meaning    |
+| :---:     | :---:      |
+| \n        | 换行       |
+| \t        | 水平制表   |
+| \\        | 代表一个 \ |
 
 
 ## 字符串
@@ -230,3 +230,37 @@ for (int i = 0; i < 10; i++ ){
 - 数据类型 数组名[ 数组长度 ];
 - 数据类型 数组名[ 数组长度 ] = { value1, value2 ... };
 - 数据类型 数组名[] = {value1,value2 ...};
+
+
+```cpp
+int arr[10] = {1,2,3,4,5,6,7,8,9,10,}
+cout << "整个数组占用的内存空间为：" << sizeof(arr) <<endl;
+cout << "每个元素占用内存空间为："<< sizeof(arr[0])<<endl;
+cout << "数组中的元素个数为：" << sizeof(arr) / sizeof(arr[0])<<endl;
+
+cout << "数组的首地址为：" << (int)arr << endl;
+cout << "数组的第一个元素地址为：" << (int)&arr[0] << endl;
+cout << "数组中第二个元素地址为：" << (int)&arr[1] << endl;
+
+```
+
+## 二维数组
+
+- 数类型 数组名 [行数] [列数] = { value1,value2 }, {value3,value4};
+ 
+`- 数类型 数组名 [行数] [列数] = {
+{ value1,value2 },
+{value3,value4}
+};`
+ 
+- 数类型 数组名 [行数] [列数] = { value1,value2 ,value3,value4};
+- 数类型 数组名 [] [列数] = { value1,value2,value3,value4};
+ 
+ 
+```cpp
+cout << "二维数组大小:" << sizeof(arr) << endl;
+cout << "二维数组一行大小" << sizeof(arr[0]) << endl;
+cout << "二维数组元素大小" << sizeof(arr[0][0]) << endl;
+```
+
+<++>
