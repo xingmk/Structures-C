@@ -13,7 +13,7 @@
 > **short** < **int** <= **long** <= **longlong**
 
 ## sizeof
-> role: compute memory size  
+> role: compute memory size
 > grammar:`sizeof( datetype / variable )`
 
 ```cpp
@@ -67,7 +67,7 @@ A - 65
 ## 字符串
 > C:  `char variable[] = "value"`
 >
-> C++: `string variable = "value"`  
+> C++: `string variable = "value"`
 > **C++** need to add `#include <string>`
 
 
@@ -214,15 +214,15 @@ for (int i = 0; i < 10; i++ ){
 
         cout << "*";
     }
-        cout << endl;
+    cout << endl;
 }
 ```
 
 ## break
-**退出循环** 
+**退出循环**
 
 ## continue
-**跳过本次循环，再执行下次循环** 
+**跳过本次循环，再执行下次循环**
 
 
 # 数组
@@ -247,16 +247,16 @@ cout << "数组中第二个元素地址为：" << (int)&arr[1] << endl;
 ## 二维数组
 
 - 数类型 数组名 [行数] [列数] = { value1,value2 }, {value3,value4};
- 
+
 `- 数类型 数组名 [行数] [列数] = {
-{ value1,value2 },
-{value3,value4}
+    { value1,value2 },
+    {value3,value4}
 };`
- 
+
 - 数类型 数组名 [行数] [列数] = { value1,value2 ,value3,value4};
 - 数类型 数组名 [] [列数] = { value1,value2,value3,value4};
- 
- 
+
+
 ```cpp
 cout << "二维数组大小:" << sizeof(arr) << endl;
 cout << "二维数组一行大小" << sizeof(arr[0]) << endl;
@@ -268,12 +268,12 @@ cout << "二维数组列数" << sizeof(arr[0])/size(arr[0][0]) << endl;
 
 # 函数
 
-**语法**  
+**语法**
 返回类型 函数名（参数列表）{函数体语句 return表达式}
 
-## 函数传值 
+## 函数传值
 
-**传值的时候：形参发生任何改变都不会影响实参** 
+**传值的时候：形参发生任何改变都不会影响实参**
 
 ```cpp
 void swap(int num1, num2){
@@ -302,59 +302,106 @@ int main(){
 # 指针
 ```cpp
 //指针定义：数据类型 * 指针变量
-    int *p;
+int *p;
 //指针记录a的地址
-    p = &a;
+p = &a;
 
 //使用指针
 //通过解引的方式来找到指针指向的内存
 //指针前加 * 代表解引用，找到指针指向的内存中的数据
-    *p --> 地址的数值
+*p --> 地址的数值
 ```
 
 ## 指针内存
-**无论指针是什么类型都遵守以下**   
-- 在32位OS下 --> 4字节   
+**无论指针是什么类型都遵守以下**
+- 在32位OS下 --> 4字节
 - 在64位OS下 --> 8字节
 
-## 空指针, 野指针 
+## 空指针, 野指针
 ```cpp
 // 空指针用于给指针进行初始化
-    int *p = NULL;
+int *p = NULL;
 
 // 空指针不能进行访问
 // 0 ～ 255 之间的内存编号是系统占用，因此不可访问
 ***Errors:***    *p = 100;
-        
+
 ```
 
 ## const修饰指针
- 
+
 - const修饰指针 --> 常量指针
 - const修饰常量 --> 指针常量
 - const即修饰指针又修饰常量
 
-**常量指针** 
+**常量指针**
 > 指针指向可以改，但是指针指向的值不可以改
 ```cpp
-     int a = 10;
-     int b = 10;
-     int *p = &a;
-     const int *p = &a;
+int a = 10;
+int b = 10;
+int *p = &a;
+const int *p = &a;
 ```
 
-**指针常量** 
+**指针常量**
 > 指针指向的值可以改，但是指针指向不可以改
 
-`int * const p = &a; ` 
+`int * const p = &a; `
 
-**即修饰指针又修饰常量**   
-`const int * const p = &a;` 
+**即修饰指针又修饰常量**
+`const int * const p = &a;`
 
 
 ## 指针和数组
 
-**数组名就是数组首地址** 
+**数组名就是数组首地址**
 
 
+## 指针和函数
 
+**地址传递可改变实参**
+```cpp
+void swap(int *p1, int *p2){
+    int temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+
+int main(){
+
+    int a = 10;
+    int b = 20;
+
+    // 地址传递
+    swap(&a, &b);
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+}
+```
+
+## 指针配合数组和函数
+```cpp
+
+void maopao(int *arr, int len){
+
+    for ( int i = 0; i < len -1; i++ ){
+        for ( int j = 0; j< len - 1 - i; j++ ){
+
+            if ( arr[j] > arr[j+1] ){
+                // 变幻值
+
+            }
+        }
+    }
+}
+
+int main(){
+
+    int arr[10] = {4, 2, 3, 4, 5, 6, 7 };
+    int len = sizeof(arr) / sizeof(arr[10]);
+
+    maopao(arr, len);
+}
+```
+
+# 结构体
