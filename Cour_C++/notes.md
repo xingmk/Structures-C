@@ -405,5 +405,150 @@ int main(){
 ```
 
 # 结构体
+> 自定义的数据类型
+
+## 结构体的定义和使用
+    - struct 结构体名 变量名
+- struct 结构体名 变量名(成员1, 成员2...)
+    - 定义结构体时顺便创建变量
+
+    ```cpp
+    struct student
+{
+    string name;
+    int age;
+    int score;
+}
+
+int main(){
+
+    struct student stu1;
+
+    stu1.name = "张三";
+    stu1.age = 18;
+    stu1.score = 100;
+
+    cout << "姓名：" << stu1.name << "年龄" << stu1.age;
+
+}
+```
+
+## 结构体数组
+
+`struct 结构体名 数组名[元素个数] = { (), (), ... }`
+
+```cpp
+// 定义结构体
+struct student
+{
+    string name;
+    int age;
+    int score;
+}
+
+int main(){
+
+    // 定义结构体数组
+    struct Student stuArray[3] = {
+
+        {"张三"， 18 ，100},
+        {"李四"， 38 ，80},
+        {"王五"， 58 ，60},
+
+    }
+
+    // 给结构体数组中的元素赋值
+    stuArray[2].name = "赵六";
+    stuArray[2].age = 80;
+    stuArray[2].score = 60;
+
+    // 遍历访问数组
+    for ( int i = 0; i < 3; i++ ){
+
+        cout << "姓名：" << stuArray[1].name
+            << "年龄"   << stuArray[1].age;
+
+    }
+
+}
+```
+
+## 结构体指针
+```cpp
+
+struct student
+{
+    string name;
+    int age;
+    int score;
+}
+int main(){
+
+    struct student stu = { "张三"，18。，100 };
+    struct student *p = &stu;
+
+    // 指针通过 -> 操作符可以访问成员
+    p->score = 80;
+
+    cout << "姓名" <<  p->name << "年龄" << p->age << endl;
+
+    return 0 ;
+}
+
+```
+
+`p-> 与 (*p).等价`
+
+## 结构体嵌套
+```cpp
+struct student{
+
+    string name;
+    int age;
+    int score;
+}
+
+struct teacher{
+
+    int id;
+    string name;
+    int age;
+    struct student stu;
+}
+
+int main(){
+
+    struct teacher t1;
+    t1.id = 1000;
+    t1.name = "老王";
+    t1.age = 40;
+
+    t1.stu.name = "张三";
+    t1.stu.age = 18;
+    t1.stu.score = 100;
+}
+
+```
+
+## 结构体做函数参数
+```cpp
+struct student{
+
+    string name;
+    int age;
+    int score;
+}
+// 值传递
+void printStudent(student stu){
+
+    cout << "XingMing" << stu.name << "NianLing" << stu.age << endl;
+}
+
+// 地址传递
+void printStudent(student *stu){
+
+    cout << "XingMing" << stu->name << "NianLing" << stu->age <<endl;
+}
+```
 
 
