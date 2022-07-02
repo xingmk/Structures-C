@@ -202,9 +202,75 @@ void func2 (int a){
 int main(){
 
     fun2(10);  --> Error: 二义性
-                    上面两个函数都可用但不知道具体用哪一个
-    
+        上面两个函数都可用但不知道具体用哪一个
+
 }
 ```
 
 
+# 类和对象
+**特性:**
+- 封装
+- 继承
+- 多态
+
+# 封装
+
+**Grammar**
+`class 类名{访问权限： 属性  /   行为}`
+
+
+```Cpp
+
+#define PI 3.14
+
+// class 代表设计一个类 类后紧跟着名称
+class Circle{
+
+    // 访问权限
+    // 公共权限
+    public:
+
+        // 属性
+        int m_r;
+
+        // 行为
+        // 获取圆的周长
+        double calculateZC(){
+
+            return 2 * PI * m_r;
+        }
+
+
+}
+
+
+int mian(){
+    // 通过一个类 创建一个对象
+    Circle ci;
+
+    // 给属性赋值
+    ci.m_r = 10;
+
+    cout << "圆的周长：" << ci.calculateZC() <<enl;
+}
+
+```
+
+## 访问权限
+- 公共权限 public   --> 成员可访问 类外也可访问
+- 保护权限 protected --> 类内可访问 类外不可
+- 私有权限 private  --> 类内可访问 类外不可
+
+
+## class  VS  struct
+
+|       class      |      struct     |
+|:----------------:|:---------------:|
+| default: private | default: public |
+
+
+## 成员私有
+**优点**
+- 可以自己控制读写权限
+- 对于写的权限 可以检测数据的有效性
