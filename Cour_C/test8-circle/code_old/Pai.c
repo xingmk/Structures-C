@@ -10,6 +10,7 @@ int main()
     sum += t;
     zi = -zi;
     mu += 2;
+    // fabs 取绝对值
     x = fabs(t);
   }
   printf("Pai的近似值为:%lf", 4 * sum);

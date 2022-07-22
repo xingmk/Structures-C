@@ -1,16 +1,15 @@
 #include <stdio.h>
 
-int main()
+int main() {
 
-{
-  double x = 1, z = 1;
   int a = 1, b = 3;
+  double sum = 1, z = 1;
   while (z > 0.00005) {
     z = z * a / b;
-    x += z;
+    sum += z;
     a++;
     b += 2;
   }
-  printf("Pai=%lf", 2 * x);
+  printf("Pai=%lf", 2 * sum);
   return 0;
 }
